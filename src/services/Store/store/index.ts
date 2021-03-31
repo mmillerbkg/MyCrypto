@@ -25,8 +25,10 @@ export {
 } from './account.slice';
 export {
   createContact,
+  createContacts,
   destroyContact,
   updateContact,
+  updateContacts,
   createOrUpdateContact,
   selectContacts
 } from './contact.slice';
