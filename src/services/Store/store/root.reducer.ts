@@ -6,6 +6,7 @@ import { select, takeLatest } from 'redux-saga/effects';
 import { featureFlagSlice } from '@services/FeatureFlag';
 import { deMarshallState, marshallState } from '@services/Store/DataManager/utils';
 
+import hdWalletSlice from './hdWallet.slice';
 import { canImport, migrateConfig } from './helpers';
 import importSlice from './import.slice';
 import { initialLegacyState } from './legacy.initialState';
@@ -19,6 +20,7 @@ const reducers = combineReducers({
   [importSlice.name]: importSlice.reducer,
   [membershipSlice.name]: membershipSlice.reducer,
   [tokenScanningSlice.name]: tokenScanningSlice.reducer,
+  [hdWalletSlice.name]: hdWalletSlice.reducer,
   [persistenceSlice.name as 'database']: createPersistReducer(persistenceSlice.reducer),
   [featureFlagSlice.name]: featureFlagSlice.reducer
 });
