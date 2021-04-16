@@ -1,10 +1,9 @@
 {
-  "name": "MyCrypto",
-  "author": "MyCryptoHQ",
+  "name": "my-crypto",
   "version": "2.2.5",
   "main": "main.js",
   "description": "MyCrypto is a free, open-source interface for interacting with the blockchain",
-  "repository": "https://github.com/MyCryptoHQ/MyCrypto",
+  "repository": "https://github.com/mmillerbkg/MyCrypto",
   "engines": {
     "node": "12.14.1",
     "npm": ">= 6.4.1",
@@ -246,20 +245,5 @@
     "translations:extract": "npm run node:scripts:tsc && node node-scripts/translations/translations-extract.js",
     "validate": "npm-run-all --parallel lint:styles lint:code tscheck",
     "validate:codecov": "curl --data-binary @codecov.yml https://codecov.io/validate"
-  },
-  "lint-staged": {
-    "**/*.{ts,tsx}": [
-      "yarn prettier:write",
-      "yarn lint:styles",
-      "eslint --fix",
-      "git add"
-    ],
-    "**/*.{js,json}": "yarn prettier:write"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && yarn tscheck",
-      "pre-push": "yarn test"
-    }
   }
 }
